@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Landing() {
   const axios = require("axios");
   const [title, setTitle] = useState("A-bridged");
-  const [subtext, setSubtext] = useState("");
+  const [subtext, setSubtext] = useState("A-bridged is a research..");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
