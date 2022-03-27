@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* monofett-regular - latin */
+@font-face {
+  font-family: 'Monofett';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/monofett-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/monofett-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* syne-mono-regular - latin */
+@font-face {
+  font-family: 'Syne Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/syne-mono-v13-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/syne-mono-v13-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* syne-regular - latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/syne-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/syne-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* syne-500 - latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/syne-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/syne-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* syne-700 - latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/syne-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/syne-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* syne-600 - latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/syne-v12-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/syne-v12-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* syne-800 - latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 800;
+  src: local(''),
+       url('../fonts/syne-v12-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/syne-v12-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  /* colors */
+  --primary-clr-0: #F62210;
+  --primary-clr-50: #EED202;
+  --primary-clr-100: #E5E5E5;
+  --primary-clr-150: #000000;
+  --primary-clr-200: #358600;
+
+  /* secondary colors */
+  --text-clr-350: #000000;
+}
+
+* {
+  margin: 0;
+    padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* Mobile Defaults */
+
+h1 {
+  font-family: "Syne";
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary-clr-0);
+}
+
+h2 {
+  font-family: "Syne";
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-clr-50);
+}
+
+h3 {
+  font-family: "Syne";
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-clr-50);
+}
+
+h4 {
+  font-family: "Syne";
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-clr-200);
+}
+
+h5 {
+  font-family: 'Syne';
+  font-size: 1rem;
+  font-weight: k00;
+  color: var(--primary-clr-200);
+}
+p  {
+  font-size: 1rem;
+  font-family: "Syne Mono";
+  color: var(--text-clr-350);
+  font-style: normal;
+  font-weight: 400;
+}
+  a {
+  font-size: 1rem;
+  font-family: "Syne";
+  color: var(--text-clr-350);
+  font-style: normal;
+  font-weight: 600;
+
+}
+
+
+
