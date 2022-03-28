@@ -11,25 +11,25 @@ export default function Landing() {
 
   // Make requests
 
-  //  axios
-  //    .get("http://localhost:1337/api/landing-page")
-  //    .then((response) => {
-  //      // handle success
-  //      const { data } = response.data;
-  //      setTitle(data.attributes.Title);
-  //      setSubtext(data.attributes.Subtext);
-  //    })
-  //    .catch(function (error) {
-  //      // handle error
-  //      console.log(error);
-  //      setError(true);
-  //    })
-  //    .then(function () {});
-  //
-  //  // Return error if axios call does not return a value
-  //
-  //  if (loading) return <p> Loading... 🥺 </p>;
-  //  if (error) return <p> Error :( </p>;
+  axios
+    .get("https://a-bridged.herokuapp.com/api/landing-page")
+    .then((response) => {
+      // handle success
+      const { data } = response.data;
+      setTitle(data.attributes.Title);
+      setSubtext(data.attributes.Blurb);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+      setError(true);
+    })
+    .then(function () {});
+
+  // Return error if axios call does not return a value
+
+  if (loading) return <p> Loading... 🥺 </p>;
+  if (error) return <p> Error :( </p>;
 
   return (
     <LandingWrapper>
