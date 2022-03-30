@@ -1,7 +1,7 @@
 import React, { Link, useEffect, useState } from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
-import MarkdownFile from "/Users/syahrulanuar/a-bridged/frontend/src/pages/markdown/the digitla compendium tutorial.md";
+import MarkdownFile from "../pages/markdown/the digitla compendium tutorial.md";
 
 export default function CraftingTutorial() {
   const [markdown, setMarkdown] = useState("");
