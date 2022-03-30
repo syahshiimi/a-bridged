@@ -12,6 +12,7 @@ import Home from "./pages/home";
 import App from "./App";
 import Datumconverter from "./pages/datumconverter";
 import Landing from "./pages/landing";
+import CraftingTutorial from "./pages/craftingtutorial";
 
 // Axios Config
 
@@ -24,6 +25,7 @@ const Index = () => {
           <Route path="/" element={<App />}>
             <Route path="/home" element={<Home />} />
             <Route path="/datumconverter" element={<Datumconverter />} />
+            <Route path="/craftingtutorial" element={<CraftingTutorial />} />
           </Route>
         </Routes>
       </BrowserRouter>

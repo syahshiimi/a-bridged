@@ -22,14 +22,14 @@ const FooterWrapper = styled.section`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  row-gap: 1vh;
-  margin-bottom: 4vh;
+  row-gap: 0.5vh;
+  margin-bottom: 2vh;
 
   .c-footer__title {
     display: flex;
     font-size: 1.25rem;
     font-family: "Monofett";
-    color: var(--primary-clr-100);
+    color: var(--primary-clr-0);
     padding: 0;
     margin: 0;
   }
