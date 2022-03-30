@@ -12,4 +12,19 @@ export const pageLinks = [
     url: "/earlymaps",
     text: "The Earliest Maps of Singapore (pre-Raffles)",
   },
+  {
+    pageID: 6,
+    url: "/earlymaps",
+    text: "Cadastral Map of Singapore (updated)",
+  },
+  {
+    pageID: 7,
+    url: "/earlymaps",
+    text: "History of Slavery and Penal Labour in Singapore",
+  },
+  {
+    pageID: 8,
+    url: "/craftingtutorial",
+    text: "The Digital Compendium To Land Surveying For Amateurs by Amateurs",
+  },
 ];
