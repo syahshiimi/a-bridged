@@ -13,32 +13,40 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <NavWrapper>
+    <NavWrapper>
+      <div className="c-navbar">
         <button className="c-navbar__button" onClick={onClick}>
           <p className="c-navbar__text">Read</p>
         </button>
-      </NavWrapper>
-      <Navlist list={pageLinks} isOpen={modalOpen} />
-    </>
+      </div>
+      <div className="c-navbar__list">
+        <Navlist list={pageLinks} isOpen={modalOpen} />
+      </div>
+    </NavWrapper>
   );
 }
 
-const NavWrapper = styled.nav`
-  position: absolute;
-  left: 120%;
+const NavWrapper = styled.div`
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
 
+  .c-navbar {
+    display: flex;
+    justify-content: flex-end;
+  }
   .c-navbar__button {
-    padding: 1vh 1vw;
-    position: absolute;
+    padding: 1vh 2vw;
+    border: none;
+    background-color: var(--primary-clr-50);
   }
-  .c-navbar__title {
-    font-family: "Monofett";
-    color: #eed202;
-    text-align: center;
+  .c-navbar__list {
+    padding: 0vh 10vw;
   }
-  .l-navlist {
-    position: absolute;
-    margin-top: 5vh;
+  .c-navbar__ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 1vh 0vw;
   }
 `;

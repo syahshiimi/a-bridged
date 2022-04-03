@@ -27,31 +27,32 @@ const AppWrapper = styled.main`
   display: grid;
   background: #e5e5e5;
   min-height: 100vh;
-  padding: 0vh 6vw;
   justify-items: center;
   grid-template-columns: auto;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
     "header"
+    "nav"
     "body"
     "footer";
+  background: radial-gradient(
+    65.89% 65.89% at 50% 50%,
+    rgba(247, 33, 14, 0.75) 0%,
+    rgba(247, 33, 14, 0) 100%
+  );
 `;
 
-const HeaderWrapper = styled.section`
+const HeaderWrapper = styled.header`
   grid-area: header;
 `;
-const NavWrapper = styled.section`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-  z-index: 2;
+const NavWrapper = styled.nav`
+  grid-area: nav;
 `;
 
-const BodyWrapper = styled.section`
+const BodyWrapper = styled.article`
   grid-area: body;
 `;
 
-const FooterWrapper = styled.section`
+const FooterWrapper = styled.footer`
   grid-area: footer;
 `;

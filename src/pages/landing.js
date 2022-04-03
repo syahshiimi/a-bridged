@@ -8,30 +8,6 @@ export default function Landing() {
   const [subtext, setSubtext] = useState(
     "A-bridged is a research foundation founded in 1995 dedicated to land surveying and mapping."
   );
-  //  const [error, setError] = useState(false);
-  //  const [loading, setLoading] = useState(false);
-
-  // Make requests
-
-  //  axios
-  //    .get("https://a-bridged.herokuapp.com/api/landing-page")
-  //    .then((response) => {
-  //      // handle success
-  //      const { data } = response.data;
-  //      setTitle(data.attributes.Title);
-  //      setSubtext(data.attributes.Blurb);
-  //    })
-  //    .catch(function (error) {
-  //      // handle error
-  //      console.log(error);
-  //      setError(true);
-  //    })
-  //    .then(function () {});
-  //
-  //  // Return error if axios call does not return a value
-  //
-  //  if (loading) return <p> Loading... 🥺 </p>;
-  //  if (error) return <p> Error :( </p>;
 
   return (
     <LandingWrapper>

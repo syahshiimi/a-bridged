@@ -5,7 +5,7 @@ export default function Navlist({ list, isOpen }) {
     return null;
   } else {
     return (
-      <div className="l-navlist">
+      <>
         {list.map((item, index) => {
           const { pageID, url, text } = item;
           return (
@@ -16,7 +16,7 @@ export default function Navlist({ list, isOpen }) {
             </ul>
           );
         })}
-      </div>
+      </>
     );
   }
 }
