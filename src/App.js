@@ -36,10 +36,11 @@ const AppWrapper = styled.main`
     "body"
     "footer";
   background: radial-gradient(
-    65.89% 65.89% at 50% 50%,
-    rgba(247, 33, 14, 0.75) 0%,
-    rgba(247, 33, 14, 0) 100%
-  );
+      41.63% 41.63% at 50% 50%,
+      #eed202 0%,
+      #e5e5e5 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 `;
 
 const HeaderWrapper = styled.header`

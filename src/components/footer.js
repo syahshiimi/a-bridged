@@ -6,7 +6,7 @@ import styled from "styled-components";
 function Footer() {
   return (
     <FooterWrapper>
-      <p className="c-footer__title"> A - Bridged </p>{" "}
+      <p className="c-footer__title"> A-bridged </p>{" "}
       <div className="c-footer__iconcontainer">
         <RiDiscordLine className="c-footer__discord" />
         <RiTwitterLine className="c-footer__twitter" />
@@ -29,7 +29,7 @@ const FooterWrapper = styled.section`
     display: flex;
     font-size: 1.25rem;
     font-family: "Monofett";
-    color: var(--primary-clr-0);
+    color: var(--primary-clr-150);
     padding: 0;
     margin: 0;
   }

@@ -2,10 +2,9 @@
 import "./assets/css/index.css";
 import "normalize-css";
 
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import axios from "axios";
 
 // Import Pages
 import Home from "./pages/home";
