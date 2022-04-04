@@ -36,12 +36,6 @@ const AppWrapper = styled.main`
     "nav"
     "body"
     "footer";
-  background: radial-gradient(
-      41.63% 41.63% at 50% 50%,
-      #eed202 0%,
-      #e5e5e5 100%
-    )
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 `;
 
 const HeaderWrapper = styled.header`
@@ -52,9 +46,16 @@ const NavWrapper = styled.nav`
 `;
 
 const BodyWrapper = styled.article`
+  max-width: 100vw;
   grid-area: body;
   padding: 0vh 5vw;
   display: flex;
+  background: radial-gradient(
+      41.63% 41.63% at 50% 50%,
+      #eed202 0%,
+      #e5e5e5 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 `;
 
 const FooterWrapper = styled.footer`

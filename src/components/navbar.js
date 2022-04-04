@@ -29,36 +29,30 @@ export default function Navbar() {
 
   return (
     <NavWrapper>
-      <div className="c-navbar">
-        <button className="c-navbar__button" onClick={openModal}>
-          <p className="c-navbar__text">Read</p>
+      <button className="c-navbar__button" onClick={openModal}>
+        <p className="c-navbar__text">Read</p>
+      </button>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        contentLabel="Example Modal"
+        className={"c-navbar__modal"}
+      >
+        <Navlist list={pageLinks} />
+        <button className="c-navbar__modalbutton" onClick={closeModal}>
+          Close
         </button>
-        <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          contentLabel="Example Modal"
-          className={"c-navbar__modal"}
-        >
-          <Navlist list={pageLinks} />
-          <button className="c-navbar__modalbutton" onClick={closeModal}>
-            Close
-          </button>
-        </Modal>
-      </div>
+      </Modal>
     </NavWrapper>
   );
 }
 
 const NavWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   width: 100vw;
 
-  .c-navbar {
-    display: flex;
-    justify-content: flex-end;
-  }
   .c-navbar__button {
     position: fixed;
     padding: 1vh 2vw;

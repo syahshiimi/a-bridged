@@ -113,6 +113,7 @@ code {
 html {
   height: 100%;
   width: 100%;
+  overflow-y: overlay;
 }
 
 /* Mobile Defaults */
@@ -173,17 +174,20 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3vh 5vw;
   position: fixed;
   top: 25%;
+  width: 100%;
+  padding: 3vh 0vw;
 }
 
 .c-navbar__modal > ul {
+  padding: 0vh 5vw;
   margin: 1vh 0vw;
   list-style: none;
 }
 .c-navbar__modal > ul > li > a {
   text-decoration: none;
+  font-family: 'Syne Mono';
 }
 
   .c-navbar__modalbutton {
