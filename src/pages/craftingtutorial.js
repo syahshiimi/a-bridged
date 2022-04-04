@@ -13,11 +13,36 @@ export default function CraftingTutorial() {
   }, []);
 
   return (
-    <div className="c-craftingtutorial">
-      This is the crafting tutorial page.
-      <ReactMarkdown children={markdown} />
-    </div>
+    <CraftingWrapper>
+      <div className="c-craftingtutorial">
+        <ReactMarkdown children={markdown} />
+      </div>
+    </CraftingWrapper>
   );
 }
 
-const CraftingWrapper = styled.main``;
+const CraftingWrapper = styled.main`
+  padding: 5vh 0vw;
+  .c-craftingtutorial > h1 {
+    margin: 2vh 0vw;
+  }
+  .c-craftingtutorial > h2 {
+    margin: 3vh 0vw;
+  }
+  .c-craftingtutorial > h3 {
+    margin: 3vh 0vw;
+  }
+  .c-craftingtutorial > ol {
+    margin: 1vh 8vw;
+  }
+  .c-craftingtutorial > p {
+    margin: 2vh 0vw;
+  }
+  .c-craftingtutorial > pre {
+    margin: 2vh 5vw;
+    code {
+      font-style: italic;
+      font-size: 0.75rem;
+    }
+  }
+`;

@@ -87,8 +87,8 @@ code {
   --primary-clr-0: #F62210;
   --primary-clr-50: #EED202;
   --primary-clr-100: #E5E5E5;
-  --primary-clr-150: #000000;
-  --primary-clr-200: #358600;
+  --primary-clr-150: #358600;
+  --primary-clr-200: ##00000;
 
   /* secondary colors */
   --text-clr-350: #000000;
@@ -96,7 +96,7 @@ code {
 
 * {
   margin: 0;
-    padding: 0;
+  padding: 0;
 }
 
 html {
@@ -108,35 +108,35 @@ html {
 
 h1 {
   font-family: "Syne";
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  color: var(--primary-clr-0);
+  color: var(--primary-clr-200);
 }
 
 h2 {
   font-family: "Syne";
-  font-size: 2.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: var(--primary-clr-50);
+  color: var(--primary-clr-150);
 }
 
 h3 {
   font-family: "Syne";
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: var(--primary-clr-50);
+  color: var(--primary-clr-0);
 }
 
 h4 {
   font-family: "Syne";
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--primary-clr-200);
 }
 
 h5 {
   font-family: 'Syne';
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: k00;
   color: var(--primary-clr-200);
 }
@@ -147,14 +147,46 @@ p  {
   font-style: normal;
   font-weight: 400;
 }
-  a {
+
+a {
   font-size: 1rem;
   font-family: "Syne";
   color: var(--text-clr-350);
   font-style: normal;
   font-weight: 600;
-
 }
 
+.c-navbar__modal {
+  background-color: var(--primary-clr-100);
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5vh 5vw;
+  position: fixed;
+  top: 25%;
+}
+
+.c-navbar__modal > ul {
+  margin: 1vh 0vw;
+  list-style: none;
+}
+.c-navbar__modal > ul > li > a {
+  text-decoration: none;
+}
+
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}
 
 

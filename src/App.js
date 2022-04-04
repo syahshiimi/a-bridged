@@ -27,6 +27,7 @@ const AppWrapper = styled.main`
   display: grid;
   background: #e5e5e5;
   min-height: 100vh;
+  max-width: 100vw;
   justify-items: center;
   grid-template-columns: auto;
   grid-template-rows: auto auto 1fr auto;
@@ -52,6 +53,7 @@ const NavWrapper = styled.nav`
 
 const BodyWrapper = styled.article`
   grid-area: body;
+  padding: 0vh 5vw;
 `;
 
 const FooterWrapper = styled.footer`
