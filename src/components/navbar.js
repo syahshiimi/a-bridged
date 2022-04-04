@@ -41,6 +41,9 @@ export default function Navbar() {
           className={"c-navbar__modal"}
         >
           <Navlist list={pageLinks} />
+          <button className="c-navbar__modalbutton" onClick={closeModal}>
+            Close
+          </button>
         </Modal>
       </div>
     </NavWrapper>

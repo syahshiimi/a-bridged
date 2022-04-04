@@ -4,15 +4,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* monofett-regular - latin */
+/* libre-barcode-128-text-regular - latin */
 @font-face {
-  font-family: 'Monofett';
+  font-family: 'Libre Barcode 128 Text';
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('../fonts/monofett-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/monofett-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/libre-barcode-128-text-v24-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/libre-barcode-128-text-v24-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+/* libre-barcode-39-regular - latin */
+@font-face {
+  font-family: 'Libre Barcode 39';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/libre-barcode-39-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/libre-barcode-39-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 
 /* syne-mono-regular - latin */
 @font-face {
@@ -162,7 +173,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5vh 5vw;
+  padding: 3vh 5vw;
   position: fixed;
   top: 25%;
 }
@@ -173,6 +184,12 @@ a {
 }
 .c-navbar__modal > ul > li > a {
   text-decoration: none;
+}
+
+  .c-navbar__modalbutton {
+  margin: 2vh 0vw 0vh 0vw;
+  background-color: transparent;
+  border: none;
 }
 
 

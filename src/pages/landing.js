@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export default function Landing() {
   //  const axios = require("axios");
@@ -11,31 +11,37 @@ export default function Landing() {
 
   return (
     <LandingWrapper>
-      <h1 className="c-landing__title">{title}</h1>
-      <h5 className="c-landing__subtext">{subtext}</h5>
-      <Link to="/home" className="c-landing__enter">
-        Enter
-      </Link>
+      <div className="l-landing">
+        <h1 className="c-landing__title">{title}</h1>
+        <p className="c-landing__subtext">{subtext}</p>
+        <Link to="/home" className="c-landing__enter">
+          Enter
+        </Link>
+      </div>
     </LandingWrapper>
   );
 }
 const LandingWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 0vh 6vw;
-  background: radial-gradient(
-    65.89% 65.89% at 50% 50%,
-    rgba(247, 33, 14, 0.75) 0%,
-    rgba(247, 33, 14, 0) 100%
-  );
-  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+  background: #e5e5e5;
 
+  .l-landing {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0vh 6vw;
+    background: radial-gradient(
+      67.18% 67.18% at 50% 50%,
+      rgba(247, 33, 14, 0.97) 0%,
+      rgba(247, 33, 14, 0) 100%
+    );
+  }
   .c-landing__title {
-    font-family: "Monofett";
-    color: #eed202;
+    font-family: "Libre Barcode 39";
+    color: var(--primary-clr-50);
     text-align: center;
+    font-size: 3.5rem;
+    margin: 0;
   }
 
   .c-landing__subtext {
@@ -53,7 +59,7 @@ const LandingWrapper = styled.div`
   //////////////////
 
   @media (min-width: 1280px) {
-    .c-landing__subtext {
+    .c - landing__subtext {
       padding: 0vh 30vw;
     }
   }
