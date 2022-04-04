@@ -54,6 +54,7 @@ const NavWrapper = styled.nav`
 const BodyWrapper = styled.article`
   grid-area: body;
   padding: 0vh 5vw;
+  display: flex;
 `;
 
 const FooterWrapper = styled.footer`

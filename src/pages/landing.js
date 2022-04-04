@@ -37,11 +37,10 @@ const LandingWrapper = styled.div`
     );
   }
   .c-landing__title {
-    font-family: "Libre Barcode 39";
+    font-family: "Libre Barcode 128 Text";
     color: var(--primary-clr-50);
     text-align: center;
     font-size: 3.5rem;
-    margin: 0;
   }
 
   .c-landing__subtext {

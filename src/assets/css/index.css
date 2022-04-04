@@ -98,7 +98,7 @@ code {
   --primary-clr-0: #F62210;
   --primary-clr-50: #EED202;
   --primary-clr-100: #E5E5E5;
-  --primary-clr-150: #358600;
+  --primary-clr-150: #274C77;
   --primary-clr-200: ##00000;
 
   /* secondary colors */
@@ -153,7 +153,7 @@ h5 {
 }
 p  {
   font-size: 1rem;
-  font-family: "Syne Mono";
+  font-family: "Syne";
   color: var(--text-clr-350);
   font-style: normal;
   font-weight: 400;
