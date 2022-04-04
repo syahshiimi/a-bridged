@@ -52,14 +52,4 @@ const LandingWrapper = styled.div`
   .c-landing__enter {
     text-align: center;
   }
-
-  //////////////////
-  ///// Desktop ////
-  //////////////////
-
-  @media (min-width: 1280px) {
-    .c - landing__subtext {
-      padding: 0vh 30vw;
-    }
-  }
 `;

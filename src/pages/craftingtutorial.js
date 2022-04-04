@@ -22,7 +22,7 @@ export default function CraftingTutorial() {
 }
 
 const CraftingWrapper = styled.main`
-  padding: 5vh 0vw;
+  padding: 2vh 0vw;
   .c-craftingtutorial > h1 {
     margin: 2vh 0vw;
   }
@@ -37,6 +37,10 @@ const CraftingWrapper = styled.main`
   }
   .c-craftingtutorial > p {
     margin: 2vh 0vw;
+  }
+  .c-craftingtutorial > hr {
+    margin: 0vh 5vw;
+    border: dotted 2px;
   }
   .c-craftingtutorial > pre {
     margin: 2vh 5vw;

@@ -51,7 +51,6 @@ export default function Navbar() {
 const NavWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 100vw;
 
   .c-navbar__button {
     position: fixed;

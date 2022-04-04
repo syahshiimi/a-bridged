@@ -19,12 +19,14 @@ const HomeWrapper = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  flex: 1 1 auto;
 
   .c-homepage__imagetitle {
     margin-top: 2vh;
     text-align: center;
     font-family: "Syne Mono";
-    font-size: 0.65rem;
+    font-size: 0.85rem;
   }
   img {
     max-width: 250px;

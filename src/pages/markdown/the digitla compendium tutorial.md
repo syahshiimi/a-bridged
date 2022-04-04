@@ -1,10 +1,9 @@
-# The Digital Compendium To Land Surveying Tutorial 
-
-The Digital Compendium To Land Surveying For Amateurs by Amateurs is part of a larger body of work investigating into the colonia violence and subdued history that persists in maps.
+# The Digital Compendium To Land Surveying: For amateurs by amateurs 
+*The Digital Compendium To Land Surveying For Amateurs* by Amateurs is part of a larger body of work investigating into the colonia violence and subdued history that persists in maps.
 
 If you came from the exhibition's QR code or browsed this page by chance, ensure you have watched the video beforehand, if you wish to do so.
 
-**Insert Video Here**
+**< To insert Video Here >**
 
 # What is this tutorial for?
 
