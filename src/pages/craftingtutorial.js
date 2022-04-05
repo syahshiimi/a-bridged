@@ -41,8 +41,8 @@ const CraftingWrapper = styled.main`
     margin: 1vh 0vw;
   }
   .c-craftingtutorial > hr {
-    margin: 2vh 5vw;
-    border: dotted 1px;
+    margin: 2vh 0vw;
+    border: 2px dotted var(--primary-clr-200);
   }
   .c-craftingtutorial > pre {
     margin: 2vh 5vw;

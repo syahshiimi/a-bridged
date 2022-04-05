@@ -220,7 +220,7 @@ blockquote > p {
 
 .c-navbar__modal > ul {
   padding: 0vh 5vw;
-  margin: 1vh 0vw;
+  margin: .5vh 0vw;
   list-style: none;
 }
 .c-navbar__modal > ul > li > a {

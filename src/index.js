@@ -34,7 +34,10 @@ const Index = () => {
             <Route
               path="*"
               element={
-                <main style={{ padding: "1rem" }}>
+                <main
+                  className="c-emptycontent"
+                  style={{ padding: "1rem", textAlign: "center" }}
+                >
                   <p>There's nothing here!</p>
                 </main>
               }

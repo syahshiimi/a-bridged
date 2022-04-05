@@ -40,6 +40,7 @@ const BodyWrapper = styled.article`
   flex-direction: column;
   flex: 1 1 100%;
   padding: 0vh 5vw;
+  justify-content: center;
   background: radial-gradient(
     41.63% 41.63% at 50% 50%,
     #eed202 0%,

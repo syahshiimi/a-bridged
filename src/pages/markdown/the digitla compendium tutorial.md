@@ -11,7 +11,7 @@ Although the tools you may see in the exhibtion were fabricated specifically for
 
 In this web documentation, you can find below links to the materials purchased. 
 
-	Disclaimer: I am not affliated in anyway way to the respective sellers. I do not earn nor profit from these links.
+> Disclaimer: I am not affliated in anyway way to the respective sellers. I do not earn nor profit from these links.
 	
 ---
 
