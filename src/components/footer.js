@@ -28,7 +28,7 @@ const FooterWrapper = styled.section`
   .c-footer__title {
     display: flex;
     font-size: 1.25rem;
-    font-family: "Monofett";
+    font-family: "Libre Barcode 39";
     color: var(--primary-clr-150);
     padding: 0;
     margin: 0;
