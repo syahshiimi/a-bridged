@@ -16,7 +16,7 @@ In this web documentation, you can find below links to the materials purchased.
 ---
 
 # Table Of Contents
-1. Obtaining The Materials 
+1. Obtaining The Materials
 2. Crafting The Survey Ranging Rod
 3. Crafting The GNSS Pole
 4. Links 
@@ -67,7 +67,8 @@ These are a list of rods that you may want to buy from. Note how they are thicke
 2. Link 2 (metal poler rod)
 3. Link 3 (mobile phone holder)
 
-		Disclaimer: I am neither affliated nor making profit from these links. 
+
+> Disclaimer: I am not affliated in anyway way to the respective sellers. I do not earn nor profit from these links.
 
 ---
 

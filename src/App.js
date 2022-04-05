@@ -10,9 +10,7 @@ export default function App() {
       <HeaderWrapper>
         <Header />
       </HeaderWrapper>
-      <NavWrapper>
-        <Navbar />
-      </NavWrapper>
+      <Navbar />
       <BodyWrapper>
         <Outlet />
       </BodyWrapper>
@@ -36,11 +34,8 @@ const AppWrapper = styled.main`
 const HeaderWrapper = styled.header`
   text-align: center;
 `;
-const NavWrapper = styled.nav``;
 
 const BodyWrapper = styled.article`
-  max-width: 100vw;
-  max-height: 100%;
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;

@@ -5,9 +5,7 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <Link to="/home">
-        <div className="l-header">
-          <h1 className="c-header__title">A-bridged</h1>
-        </div>
+        <h1 className="c-header__title">A-bridged</h1>
       </Link>
     </HeaderWrapper>
   );
@@ -18,6 +16,7 @@ const HeaderWrapper = styled.div`
     text-decoration: none;
   }
   .c-header__title {
+    margin: 4vh 0vw 0vh;
     font-family: "Libre Barcode 39";
     font-size: 3rem;
     font-weight: 800;

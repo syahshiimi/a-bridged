@@ -22,25 +22,27 @@ export default function CraftingTutorial() {
 }
 
 const CraftingWrapper = styled.main`
-  padding: 2vh 0vw;
+  margin-top: 3vh;
   .c-craftingtutorial > h1 {
-    margin: 2vh 0vw;
+    margin: 3vh 0vw;
   }
   .c-craftingtutorial > h2 {
-    margin: 3vh 0vw;
+    margin: 2vh 3vw;
+    border-bottom: 1px solid var(--primary-clr-200);
+    padding-bottom: 2px;
   }
   .c-craftingtutorial > h3 {
-    margin: 3vh 0vw;
+    margin: 2vh 5vw;
   }
   .c-craftingtutorial > ol {
     margin: 1vh 8vw;
   }
   .c-craftingtutorial > p {
-    margin: 2vh 0vw;
+    margin: 1vh 0vw;
   }
   .c-craftingtutorial > hr {
-    margin: 0vh 5vw;
-    border: dotted 2px;
+    margin: 2vh 5vw;
+    border: dotted 1px;
   }
   .c-craftingtutorial > pre {
     margin: 2vh 5vw;

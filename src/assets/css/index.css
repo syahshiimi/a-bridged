@@ -95,11 +95,11 @@ code {
 
 :root {
   /* colors */
-  --primary-clr-0: #F62210;
-  --primary-clr-50: #EED202;
-  --primary-clr-100: #E5E5E5;
-  --primary-clr-150: #274C77;
-  --primary-clr-200: ##00000;
+  --primary-clr-0: #F62210; /* red */
+  --primary-clr-50: #EED202; /* safety yellow */
+  --primary-clr-100: #E5E5E5; /* neutral gray */
+  --primary-clr-150: #274C77; /* yale blue */
+  --primary-clr-200: #000000; /* black */
 
   /* secondary colors */
   --text-clr-350: #000000;
@@ -110,10 +110,11 @@ code {
   padding: 0;
 }
 
+
 html {
-  height: 100%;
-  width: 100%;
-  overflow-y: overlay;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
 }
 
 /* Mobile Defaults */
@@ -121,35 +122,35 @@ html {
 h1 {
   font-family: "Syne";
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--primary-clr-200);
 }
 
 h2 {
   font-family: "Syne";
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary-clr-150);
 }
 
 h3 {
   font-family: "Syne";
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--primary-clr-0);
 }
 
 h4 {
   font-family: "Syne";
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--primary-clr-200);
 }
 
 h5 {
   font-family: 'Syne';
   font-size: 1.1rem;
-  font-weight: k00;
+  font-weight: 400;
   color: var(--primary-clr-200);
 }
 p  {
@@ -167,6 +168,43 @@ a {
   font-style: normal;
   font-weight: 600;
 }
+
+li {
+  font-size: 1rem;
+  font-family: "Syne";
+  color: var(--text-clr-350);
+  font-style: normal;
+  font-weight: 600;
+  padding: .5vh 0vw;
+}
+
+::marker {
+  opacity: 0.2;
+}
+
+strong {
+  font-family: 'Syne';
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: normal;
+
+}
+
+blockquote {
+  margin: 2vh 5vw;
+}
+
+blockquote > p {
+  font-size: .9rem;
+  font-style: italic;
+  background-color: grey;
+  padding: 2vh;
+  opacity: .6;
+  border-radius: 5px;
+  color: var(--primary-clr-100);
+}
+
+
 
 .c-navbar__modal {
   background-color: var(--primary-clr-100);
