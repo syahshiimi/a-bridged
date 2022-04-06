@@ -1,4 +1,5 @@
-import { BsArrowDownSquareFill } from "react-icons/bs";
+import { BsArrowDownCircleFill } from "react-icons/bs";
+import { IconBase, IconContext } from "react-icons";
 import styled from "styled-components";
 
 export default function Converter() {
@@ -27,13 +28,33 @@ export default function Converter() {
             />
           </div>
         </section>
-        <BsArrowDownSquareFill />
+        <IconContext.Provider
+          value={{ size: "1.8rem", className: "c-converter__icon" }}
+        >
+          <div className="c-converter__iconcontainer">
+            <BsArrowDownCircleFill />
+          </div>
+        </IconContext.Provider>
         <section className="l-converter__secondselection">
-          <p className="c-converter__secondselection">From</p>
-          <select className="c-converter__seconddropdown">
-            <option value={"SYV21"}>SVY21</option>
-            <option value={"WGS84"}>WGS84</option>
-          </select>
+          <div className="c-converter__dropdowncontainer">
+            <p className="c-converter__secondselection">To</p>
+            <select className="c-converter__seconddropdown">
+              <option value={"SYV21"}>SVY21</option>
+              <option value={"WGS84"}>WGS84</option>
+            </select>
+          </div>
+          <div className="c-converter__inputcontainer">
+            <input
+              type="text"
+              className="c-converter__firstinput"
+              placeholder="Northing"
+            />
+            <input
+              type="text"
+              className="c-converter__secondinput"
+              placeholder="Easting"
+            />
+          </div>
         </section>
       </div>
     </ConverterWrapper>
@@ -43,6 +64,7 @@ export default function Converter() {
 const ConverterWrapper = styled.main`
   justify-content: flex-start;
   background-color: var(--primary-clr-0);
+  margin: 2vh;
   padding: 3vh;
   border-radius: 15px;
   opacity: 0.8;
@@ -52,6 +74,16 @@ const ConverterWrapper = styled.main`
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .c-converter__iconcontainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .c-converter__icon {
+    color: var(--primary-clr-50);
   }
 
   .c-converter__title {
@@ -61,21 +93,23 @@ const ConverterWrapper = styled.main`
     text-align: left;
   }
 
+  /* Top Section */
   .l-converter__firstselection {
     display: flex;
     flex-direction: column;
-    padding: 2vh 0vw;
+    padding: 1vh 0vw;
   }
 
-  .c-converter__firstselection {
-    font-weight: 700;
-    color: var(--primary-clr-100);
-  }
   .c-converter__dropdowncontainer {
     display: flex;
     flex-direction: row;
     margin: 1vh 0vw;
     padding: 0vh 1vh;
+  }
+
+  .c-converter__firstselection {
+    font-weight: 700;
+    color: var(--primary-clr-100);
   }
 
   .c-converter__firstdropdown {
@@ -87,8 +121,9 @@ const ConverterWrapper = styled.main`
     display: flex;
     flex-direction: column;
     width: 100%;
+    }
     * {
-      margin: 1vh 0vw;
+      margin: 0.5vh 0vw;
     }
   }
 
@@ -96,12 +131,25 @@ const ConverterWrapper = styled.main`
   .c-converter__secondinput {
     padding: 1.25vh;
     font-size: 0.85rem;
+    font-family: 'Syne';
+    font-weight: 400;
     opacity: 0.8;
     text-align: right;
   }
 
+  /* Bottom Section */
   .l-converter__secondselection {
     display: flex;
-    padding: 2vh 0vw;
+    flex-direction: column;
+    padding: 0vh 0vw;
+  }
+  .c-converter__secondselection {
+    font-weight: 700;
+    color: var(--primary-clr-100);
+  }
+
+  .c-converter__seconddropdown {
+    margin: 0vh 2vw;
+    font-size: 0.8rem;
   }
 `;

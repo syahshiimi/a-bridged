@@ -46,6 +46,7 @@ const DatumWrapper = styled.main`
   display: flex;
   justify-content: center;
   text-align: center;
+  padding: 5vh 0vw;
 
   .c-aboutconverter {
     margin-top: 5vh;
