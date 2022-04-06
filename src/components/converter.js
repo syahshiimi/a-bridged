@@ -1,8 +1,23 @@
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import { IconBase, IconContext } from "react-icons";
+import SVY21 from "../components/svy21";
 import styled from "styled-components";
+import React, { useState } from "react";
 
 export default function Converter() {
+  // Initialization
+  var cv = new SVY21();
+
+  // Computing SVY21 from Lat/Lon
+  var lat = 1.2949192688485278;
+  var lon = 103.77367436885834;
+  var result = cv.computeSVY21(lat, lon);
+  console.log("svy21 to lat/lon", result);
+
+  const [datum, setDatum] = useState("WGS84");
+
+  const onClick = () => {};
+
   return (
     <ConverterWrapper>
       <div className="l-converter">
@@ -29,7 +44,7 @@ export default function Converter() {
           </div>
         </section>
         <IconContext.Provider
-          value={{ size: "1.8rem", className: "c-converter__icon" }}
+          value={{ size: "1.8em", className: "c-converter__icon" }}
         >
           <div className="c-converter__iconcontainer">
             <BsArrowDownCircleFill />

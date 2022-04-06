@@ -8,15 +8,6 @@ import SVY21 from "../components/svy21";
 import MarkdownFile from "../pages/markdown/datumconverter.md";
 
 const DatumConverter = () => {
-  // Initialization
-  var cv = new SVY21();
-
-  // Computing SVY21 from Lat/Lon
-  var lat = 1.2949192688485278;
-  var lon = 103.77367436885834;
-  var result = cv.computeSVY21(lat, lon);
-  console.log("svy21 to lat/lon", result);
-
   const [markdown, setMarkdown] = useState("");
   useEffect(() => {
     fetch(MarkdownFile)
