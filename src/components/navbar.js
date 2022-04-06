@@ -53,6 +53,7 @@ const NavWrapper = styled.div`
   justify-content: flex-end;
 
   .c-navbar__button {
+    z-index: 1;
     position: fixed;
     padding: 1vh 2vw;
     border: none;

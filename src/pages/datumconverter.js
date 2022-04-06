@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
-import SVY21 from "../components/svy21";
 
 // Import Components
 import Converter from "../components/converter";
+import SVY21 from "../components/svy21";
+import MarkdownFile from "../pages/markdown/datumconverter.md";
 
 const DatumConverter = () => {
   // Initialization
@@ -15,35 +17,31 @@ const DatumConverter = () => {
   var result = cv.computeSVY21(lat, lon);
   console.log("svy21 to lat/lon", result);
 
+  const [markdown, setMarkdown] = useState("");
+  useEffect(() => {
+    fetch(MarkdownFile)
+      .then((res) => res.text())
+      .then((text) => setMarkdown(text));
+  }, []);
+
   return (
     <DatumWrapper>
       <div className="l-datumconverter">
         <section className="c-datumconverter">
+          <Converter />
           <h1>Convert between Datum Types</h1>
           <p>Currently the converter only supports WGS84 and SVY21 Datum</p>
         </section>
-        <section className="c-aboutconverter"></section>
-        <h1 className="c-aboutconverter__title">About the converter</h1>
-        <p>
-          This caonverter would not be possible without the contributions by
-          many others done before a-bridged.
-        </p>
-        <p>
-          The converter would like to thank linz.nz, for providing the formula
-          needed to convert between datums.
-        </p>
-        <p>
-          The cnverter would like tot thank this Github repositiory for
-          providing the implementation on JavaScript.
-        </p>
-        <p>
-          None of these would be possible without the contribution of others.
-        </p>
+        <section className="c-aboutconverter">
+          <h1 className="c-aboutconverter__title">About the converter</h1>
+          <article className="c-aboutconverter__credits">
+            <ReactMarkdown children={markdown} />
+          </article>
+        </section>
       </div>
     </DatumWrapper>
   );
 };
-
 const DatumWrapper = styled.main`
   display: flex;
   justify-content: center;
