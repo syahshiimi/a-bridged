@@ -19,8 +19,8 @@ const DatumConverter = () => {
     <DatumWrapper>
       <div className="l-datumconverter">
         <section className="c-datumconverter">
-          <Converter />
           <h1>Convert between Datum Types</h1>
+          <Converter />
           <p>Currently the converter only supports WGS84 and SVY21 Datum</p>
         </section>
         <section className="c-aboutconverter">

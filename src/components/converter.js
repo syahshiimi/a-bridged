@@ -1,8 +1,11 @@
-import { BsArrowDownCircleFill } from "react-icons/bs";
+import { wait } from "@testing-library/user-event/dist/utils";
+import React, { useEffect, useRef, useState } from "react";
 import { IconBase, IconContext } from "react-icons";
-import SVY21 from "../components/svy21";
+import { BsArrowDownCircleFill } from "react-icons/bs";
+import { setElement } from "react-modal/lib/helpers/ariaAppHider";
 import styled from "styled-components";
-import React, { useState, useRef, useEffect } from "react";
+
+import SVY21 from "../components/svy21";
 
 export default function Converter() {
   // Initialization
@@ -18,9 +21,14 @@ export default function Converter() {
   // Set default form to WGS84 (lat/lon)
   const [firstDatum, setFirstDatum] = useState("WGS84");
   const [secondDatum, setSecondDatum] = useState("SVy21");
+  const [latValue, setlatValue] = useState("");
+  const [lonValue, setlonValue] = useState("");
+  const [northValue, setnorthValue] = useState("");
+  const [eastValue, seteastValue] = useState("");
 
   const firstHandleChange = (e) => {
     setFirstDatum(e.target.value);
+    console.log("click");
   };
 
   const secondHandleChange = (e) => {
@@ -30,40 +38,45 @@ export default function Converter() {
   const FirstForm = () => {
     if (firstDatum == "WGS84") {
       return (
-        <form className="c-converter__formcontainer">
-          <div className="c-converter__inputcontainer">
-            <input
-              type="text"
-              className="c-converter__firstinput"
-              placeholder="Latitude"
-            />
-            <input
-              type="text"
-              className="c-converter__secondinput"
-              placeholder="Longitude"
-            />
-          </div>
+        <form className="c-converter__inputcontainer">
+          <input
+            type="text"
+            className="c-converter__latitudeinput"
+            placeholder="Latitude"
+            value={latValue}
+            onInput={(e) => setlatValue(e.target.value)}
+          />{" "}
+          <input
+            type="text"
+            className="c-converter__longitudeinput"
+            placeholder="Longitude"
+            value={lonValue}
+            onInput={(e) => setlonValue(e.target.value)}
+          />{" "}
         </form>
       );
     } else {
       return (
-        <form>
-          <div className="c-converter__inputcontainer">
-            <input
-              type="text"
-              className="c-converter__firstinput"
-              placeholder="Northing"
-            />
-            <input
-              type="text"
-              className="c-converter__secondinput"
-              placeholder="Easting"
-            />
-          </div>
+        <form className="c-converter__inputcontainer">
+          <input
+            type="text"
+            className="c-converter__northinginput"
+            placeholder="Northing"
+            value={northValue}
+            onInput={(e) => setnorthValue(e.target.value)}
+          />{" "}
+          <input
+            type="text"
+            className="c-converter__eastinginput"
+            placeholder="Easting"
+            value={eastValue}
+            onInput={(e) => seteastValue(e.target.value)}
+          />{" "}
         </form>
       );
     }
   };
+
   const SecondForm = () => {
     if (secondDatum == "WGS84") {
       return (
@@ -71,31 +84,31 @@ export default function Converter() {
           <div className="c-converter__inputcontainer">
             <input
               type="text"
-              className="c-converter__firstinput"
+              className="c-converter__latitudeinput"
               placeholder="Latitude"
-            />
+            />{" "}
             <input
               type="text"
-              className="c-converter__secondinput"
+              className="c-converter__longitudeinput"
               placeholder="Longitude"
-            />
+            />{" "}
           </div>
         </form>
       );
     } else {
       return (
-        <form>
+        <form className="c-converter__formcontainer">
           <div className="c-converter__inputcontainer">
             <input
               type="text"
-              className="c-converter__firstinput"
+              className="c-converter__northinginput"
               placeholder="Northing"
-            />
+            />{" "}
             <input
               type="text"
-              className="c-converter__secondinput"
+              className="c-converter__eastinginput"
               placeholder="Easting"
-            />
+            />{" "}
           </div>
         </form>
       );
@@ -118,7 +131,7 @@ export default function Converter() {
               <option value="WGS84">WGS84</option>
             </select>
           </div>
-          <FirstForm />
+          {FirstForm()}
         </section>
         <IconContext.Provider
           value={{ size: "1.8em", className: "c-converter__icon" }}
@@ -212,8 +225,10 @@ const ConverterWrapper = styled.main`
     }
   }
 
-  .c-converter__firstinput,
-  .c-converter__secondinput {
+  .c-converter__latitudeinput,
+  .c-converter__longitudeinput,
+  .c-converter__northinginput,
+  .c-converter__eastinginput {
     padding: 1.25vh;
     font-size: 0.85rem;
     font-family: 'Syne';
