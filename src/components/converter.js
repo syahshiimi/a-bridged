@@ -5,6 +5,9 @@ import styled from "styled-components";
 
 import SVY21 from "../components/svy21";
 
+// To-do
+// Increase floating point precision
+
 export default function Converter() {
   // Set WGS84 as the default
   useEffect(() => {
