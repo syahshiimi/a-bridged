@@ -6,6 +6,12 @@ import styled from "styled-components";
 import SVY21 from "../components/svy21";
 
 export default function Converter() {
+  // Set WGS84 as the default
+  useEffect(() => {
+    setFirstDatum("WGS84");
+    setSecondDatum("SVY21");
+  }, []);
+
   const WGSForm = () => {
     return (
       <>
@@ -49,31 +55,16 @@ export default function Converter() {
   };
 
   // Initialization
-  var cv = new SVY21();
+  const cv = new SVY21();
 
-  // Set WGS84 as the default
-  useEffect(() => {
-    setFirstDatum("WGS84");
-    setSecondDatum("SVY21");
-  }, []);
-
+  var lat = 1.2949192688485278;
+  var lon = 103.77367436885834;
+  var result = cv.computeSVY21(lat, lon);
+  console.log("test", result);
   // Form components
   // Set default form to WGS84 (lat/lon)
   const [firstDatum, setFirstDatum] = useState("");
   const [secondDatum, setSecondDatum] = useState("");
-
-  const [latValue, setlatValue] = useState("");
-  const [lonValue, setlonValue] = useState("");
-  const [northValue, setnorthValue] = useState("");
-  const [eastValue, seteastValue] = useState("");
-
-  const conversionResults = (latValue, lonValue) => {
-    const newResults = cv.computeSVY21(latValue, lonValue);
-    const { N, E } = newResults;
-    console.log(newResults);
-    setnorthValue(parseInt(N));
-    seteastValue(parseInt(E));
-  };
 
   // Select Options
 
@@ -85,7 +76,7 @@ export default function Converter() {
     setnorthValue("");
     seteastValue("");
 
-    // Change Datum Render
+    // Change Other Form (Second Form)
     if (e.target.value == "WGS84") {
       setSecondDatum("SVY21");
     } else {
@@ -100,31 +91,12 @@ export default function Converter() {
     setlatValue("");
     setnorthValue("");
     seteastValue("");
-    // Change Datum Render
+    // Change Other Form (First Form)
     if (e.target.value == "WGS84") {
       setFirstDatum("SVY21");
     } else {
       setFirstDatum("WGS84");
     }
-  };
-
-  // Input Toggling
-
-  const handleLatInput = (e) => {
-    setlatValue(e.target.value);
-  };
-
-  const handleLonInput = (e) => {
-    setlonValue(e.target.value);
-    conversionResults(latValue, lonValue);
-  };
-
-  const handleNorthInput = (e) => {
-    setnorthValue(e.target.value);
-  };
-
-  const handleEastInput = (e) => {
-    seteastValue(e.target.value);
   };
 
   const FirstForm = () => {
@@ -141,6 +113,48 @@ export default function Converter() {
     } else {
       return <>{SVYForm()}</>;
     }
+  };
+
+  // Calculate Input
+  const [latValue, setlatValue] = useState("");
+  const [lonValue, setlonValue] = useState("");
+  const [northValue, setnorthValue] = useState("");
+  const [eastValue, seteastValue] = useState("");
+
+  const handleLatInput = (e) => {
+    setlatValue(e.target.value);
+    convertToSVY(latValue, lonValue);
+  };
+
+  const handleLonInput = (e) => {
+    setlonValue(e.target.value);
+    convertToSVY(latValue, lonValue);
+  };
+
+  const handleNorthInput = (e) => {
+    setnorthValue(e.target.value);
+    convertToLatLon(northValue, eastValue);
+  };
+
+  const handleEastInput = (e) => {
+    seteastValue(e.target.value);
+    convertToLatLon(northValue, eastValue);
+  };
+
+  const convertToSVY = (latValue, lonValue) => {
+    const newResults = cv.computeSVY21(latValue, lonValue);
+    const { N, E } = newResults;
+    console.log(newResults);
+    setnorthValue(parseInt(N));
+    seteastValue(parseInt(E));
+  };
+
+  const convertToLatLon = (northValue, eastValue) => {
+    const resultsLatLon = cv.computeLatLon(northValue, eastValue);
+    console.log(resultsLatLon);
+    const { lat, lon } = resultsLatLon;
+    setlatValue(parseInt(lat));
+    setlonValue(parseInt(lon));
   };
 
   return (
