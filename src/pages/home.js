@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import image from "../assets/img/epoch028_fake_A 1.png";
-console.log(image);
 
 const Home = () => {
   return (
