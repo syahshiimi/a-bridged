@@ -1,8 +1,6 @@
-import { wait } from "@testing-library/user-event/dist/utils";
-import React, { useEffect, useRef, useState } from "react";
-import { IconBase, IconContext } from "react-icons";
+import React, { useState } from "react";
+import { IconContext } from "react-icons";
 import { BsArrowDownCircleFill } from "react-icons/bs";
-import { setElement } from "react-modal/lib/helpers/ariaAppHider";
 import styled from "styled-components";
 
 import SVY21 from "../components/svy21";
@@ -12,9 +10,9 @@ export default function Converter() {
   var cv = new SVY21();
 
   // Computing SVY21 from Lat/Lon
-  var lat = 1.2949192688485278;
-  var lon = 103.77367436885834;
-  var result = cv.computeSVY21(lat, lon);
+  //  var lat = 1.2;
+  //  var lon = 1.1;
+  //  var result = cv.computeSVY21(lat, lon);
   //  console.log("svy21 to lat/lon", result);
 
   // Form components
@@ -26,53 +24,76 @@ export default function Converter() {
   const [northValue, setnorthValue] = useState("");
   const [eastValue, seteastValue] = useState("");
 
+  const conversionResults = (latValue, lonValue, northValue, eastValue) => {
+    const newResults = cv.computeSVY21(latValue, lonValue);
+    const { N, E } = newResults;
+    setnorthValue(parseInt(N));
+    seteastValue(parseInt(E));
+  };
+
   const firstHandleChange = (e) => {
     setFirstDatum(e.target.value);
-    console.log("click");
   };
 
   const secondHandleChange = (e) => {
     setSecondDatum(e.target.value);
   };
 
+  const handleLatInput = (e) => {
+    setlatValue(e.target.value);
+  };
+
+  const handleLonInput = (e) => {
+    setlonValue(e.target.value);
+    conversionResults(latValue, lonValue);
+  };
+
+  const handleNorthInput = (e) => {
+    setnorthValue(e.target.value);
+  };
+
+  const handleEastInput = (e) => {
+    seteastValue(e.target.value);
+  };
+
   const FirstForm = () => {
     if (firstDatum == "WGS84") {
       return (
-        <form className="c-converter__inputcontainer">
+        <>
           <input
             type="text"
             className="c-converter__latitudeinput"
             placeholder="Latitude"
             value={latValue}
-            onInput={(e) => setlatValue(e.target.value)}
+            onInput={handleLatInput}
           />{" "}
           <input
             type="text"
             className="c-converter__longitudeinput"
             placeholder="Longitude"
             value={lonValue}
-            onInput={(e) => setlonValue(e.target.value)}
+            onInput={handleLonInput}
           />{" "}
-        </form>
+        </>
       );
     } else {
       return (
-        <form className="c-converter__inputcontainer">
+        <>
           <input
             type="text"
             className="c-converter__northinginput"
             placeholder="Northing"
             value={northValue}
-            onInput={(e) => setnorthValue(e.target.value)}
+            onInput={handleNorthInput}
           />{" "}
           <input
             type="text"
             className="c-converter__eastinginput"
             placeholder="Easting"
             value={eastValue}
-            onInput={(e) => seteastValue(e.target.value)}
+            onInput={handleEastInput}
           />{" "}
-        </form>
+        </>
       );
     }
   };
@@ -80,37 +101,41 @@ export default function Converter() {
   const SecondForm = () => {
     if (secondDatum == "WGS84") {
       return (
-        <form className="c-converter__formcontainer">
-          <div className="c-converter__inputcontainer">
-            <input
-              type="text"
-              className="c-converter__latitudeinput"
-              placeholder="Latitude"
-            />{" "}
-            <input
-              type="text"
-              className="c-converter__longitudeinput"
-              placeholder="Longitude"
-            />{" "}
-          </div>
-        </form>
+        <>
+          <input
+            type="text"
+            className="c-converter__latitudeinput"
+            placeholder="Latitude"
+            value={latValue}
+            onInput={handleLatInput}
+          />{" "}
+          <input
+            type="text"
+            className="c-converter__longitudeinput"
+            placeholder="Longitude"
+            value={lonValue}
+            onInput={handleLonInput}
+          />{" "}
+        </>
       );
     } else {
       return (
-        <form className="c-converter__formcontainer">
-          <div className="c-converter__inputcontainer">
-            <input
-              type="text"
-              className="c-converter__northinginput"
-              placeholder="Northing"
-            />{" "}
-            <input
-              type="text"
-              className="c-converter__eastinginput"
-              placeholder="Easting"
-            />{" "}
-          </div>
-        </form>
+        <>
+          <input
+            type="text"
+            className="c-converter__northinginput"
+            placeholder="Northing"
+            value={northValue}
+            onInput={handleNorthInput}
+          />{" "}
+          <input
+            type="text"
+            className="c-converter__eastinginput"
+            placeholder="Easting"
+            value={eastValue}
+            onInput={handleEastInput}
+          />{" "}
+        </>
       );
     }
   };
@@ -131,7 +156,9 @@ export default function Converter() {
               <option value="WGS84">WGS84</option>
             </select>
           </div>
-          {FirstForm()}
+          <form className="c-converter__inputcontainer" method="get">
+            {FirstForm()}
+          </form>
         </section>
         <IconContext.Provider
           value={{ size: "1.8em", className: "c-converter__icon" }}
@@ -152,7 +179,7 @@ export default function Converter() {
               <option value="WGS84">WGS84</option>
             </select>
           </div>
-          <SecondForm />
+          <form className="c-converter__inputcontainer">{SecondForm()}</form>
         </section>
       </div>
     </ConverterWrapper>
@@ -191,7 +218,7 @@ const ConverterWrapper = styled.main`
     text-align: left;
   }
 
-  /* Top Section */
+  / * Top Section * /
   .l-converter__firstselection {
     display: flex;
     flex-direction: column;
@@ -237,7 +264,8 @@ const ConverterWrapper = styled.main`
     text-align: right;
   }
 
-  /* Bottom Section */
+  / * Bottom Section *
+          /
   .l-converter__secondselection {
     display: flex;
     flex-direction: column;
