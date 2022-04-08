@@ -2,11 +2,19 @@ import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import styled from "styled-components";
+import Big from "big.js";
 
 import SVY21 from "../components/svy21";
 
 // To-do
 // Increase floating point precision
+
+const cv = new SVY21();
+
+var lat = 1.2949192688485278;
+var lon = 103.77367436885834;
+var result = cv.computeSVY21(lat, lon);
+console.log("original results", result);
 
 export default function Converter() {
   // Set WGS84 as the default
@@ -60,10 +68,6 @@ export default function Converter() {
   // Initialization
   const cv = new SVY21();
 
-  var lat = 1.2949192688485278;
-  var lon = 103.77367436885834;
-  var result = cv.computeSVY21(lat, lon);
-  console.log("test", result);
   // Form components
   // Set default form to WGS84 (lat/lon)
   const [firstDatum, setFirstDatum] = useState("");
@@ -147,17 +151,17 @@ export default function Converter() {
   const convertToSVY = (latValue, lonValue) => {
     const newResults = cv.computeSVY21(latValue, lonValue);
     const { N, E } = newResults;
-    console.log(newResults);
-    setnorthValue(parseInt(N));
-    seteastValue(parseInt(E));
+    console.log("lat/lon to SVY21", newResults);
+    setnorthValue(Number(N));
+    seteastValue(Number(E));
   };
 
   const convertToLatLon = (northValue, eastValue) => {
     const resultsLatLon = cv.computeLatLon(northValue, eastValue);
-    console.log(resultsLatLon);
+    console.log("SVY21 to lat/lon", resultsLatLon);
     const { lat, lon } = resultsLatLon;
-    setlatValue(parseInt(lat));
-    setlonValue(parseInt(lon));
+    setlatValue(Number(lat));
+    setlonValue(Number(lon));
   };
 
   return (
