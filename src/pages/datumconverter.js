@@ -40,7 +40,7 @@ const DatumWrapper = styled.main`
   padding: 5vh 0vw;
 
   .c-aboutconverter {
-    margin-top: 5vh;
+    margin: 5vh 15vw 0vh 15vw;
   }
   p {
     margin: 1vh 0vw;
