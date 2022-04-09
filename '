@@ -133,9 +133,9 @@ export default function Converter() {
   const [latNum, setLatNum] = useState(0);
   const [lonNum, setLonNum] = useState(0);
 
-  const handleConvert = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    convertToSVY(latNum, lonNum);
+    console.log("hi");
   };
 
   const handleLatInput = (e) => {
@@ -143,18 +143,20 @@ export default function Converter() {
     // Set form display
     setlatValue(e.target.value);
 
-    // Set Value for calculation
     setLatNum(parseFloat(e.target.value));
   };
+
+  console.log(latNum);
 
   const handleLonInput = (e) => {
     e.preventDefault();
     // Set form display
     setlonValue(e.target.value);
 
-    // Set Value for calculation
     setLonNum(parseFloat(e.target.value));
   };
+
+  console.log(lonNum);
 
   const handleNorthInput = (e) => {
     setnorthValue(e.target.value);
@@ -198,10 +200,7 @@ export default function Converter() {
               <option value="WGS84">WGS84</option>
             </select>
           </div>
-          <form
-            className="c-converter__inputcontainer"
-            onSubmit={handleConvert}
-          >
+          <form className="c-converter__inputcontainer" onSubmit={handleSubmit}>
             {FirstForm()}
           </form>
         </section>
@@ -209,7 +208,7 @@ export default function Converter() {
           value={{ size: "1.8em", className: "c-converter__icon" }}
         >
           <div className="c-converter__iconcontainer">
-            <BsArrowDownCircleFill onClick={handleConvert} />
+            <BsArrowDownCircleFill />
           </div>
         </IconContext.Provider>
         <section className="l-converter__secondselection">
