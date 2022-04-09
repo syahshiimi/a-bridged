@@ -2,7 +2,7 @@
 import "./assets/css/index.css";
 import "normalize-css";
 
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 

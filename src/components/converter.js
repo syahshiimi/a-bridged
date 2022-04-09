@@ -77,7 +77,7 @@ export default function Converter() {
 
   const firstHandleChange = (e) => {
     setFirstDatum(e.target.value);
-    // Reset if change datum
+    // Reset display values
     setlonValue("");
     setlatValue("");
     setnorthValue("");
@@ -93,7 +93,7 @@ export default function Converter() {
 
   const secondHandleChange = (e) => {
     setSecondDatum(e.target.value);
-    // Reset if change datum
+    // Reset display values
     setlonValue("");
     setlatValue("");
     setnorthValue("");
@@ -130,6 +130,7 @@ export default function Converter() {
   const [northValue, setnorthValue] = useState("");
   const [eastValue, seteastValue] = useState("");
 
+  // useState hooks to store actual num values for conversion
   const [latNum, setLatNum] = useState(0);
   const [lonNum, setLonNum] = useState(0);
 
@@ -198,12 +199,7 @@ export default function Converter() {
               <option value="WGS84">WGS84</option>
             </select>
           </div>
-          <form
-            className="c-converter__inputcontainer"
-            onSubmit={handleConvert}
-          >
-            {FirstForm()}
-          </form>
+          <form className="c-converter__inputcontainer">{FirstForm()}</form>
         </section>
         <IconContext.Provider
           value={{ size: "1.8em", className: "c-converter__icon" }}
@@ -250,6 +246,7 @@ const ConverterWrapper = styled.main`
   .c-converter__iconcontainer {
     display: flex;
     justify-content: center;
+    margin: 1vh 0vw;
   }
 
   .c-converter__icon {
@@ -263,11 +260,11 @@ const ConverterWrapper = styled.main`
     text-align: left;
   }
 
-  / * Top Section * /
+  /* Top Section */
   .l-converter__firstselection {
     display: flex;
     flex-direction: column;
-    padding: 1vh 0vw;
+    padding: 0vh 0vw;
   }
 
   .c-converter__dropdowncontainer {
@@ -291,9 +288,9 @@ const ConverterWrapper = styled.main`
     display: flex;
     flex-direction: column;
     width: 100%;
-    }
-    * {
-      margin: 0.5vh 0vw;
+
+    input {
+      margin: 0.3vh 0vw;
     }
   }
 
@@ -303,14 +300,13 @@ const ConverterWrapper = styled.main`
   .c-converter__eastinginput {
     padding: 1.25vh;
     font-size: 0.85rem;
-    font-family: 'Syne';
+    font-family: "Syne";
     font-weight: 400;
     opacity: 0.8;
     text-align: right;
   }
 
-  / * Bottom Section *
-          /
+  /* Second Selection */
   .l-converter__secondselection {
     display: flex;
     flex-direction: column;

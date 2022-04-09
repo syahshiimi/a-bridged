@@ -20,11 +20,11 @@ export default function Navbar() {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
+    console.log("is open");
   }
 
   function closeModal() {
     setIsOpen(false);
-    console.log("click");
   }
 
   return (
