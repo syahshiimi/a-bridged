@@ -245,6 +245,7 @@ const ConverterWrapper = styled.main`
     font-size: 1rem;
     text-decoration: underline;
     text-align: left;
+    margin-bottom: 1vh;
   }
 
   /* Top Section */
@@ -286,7 +287,7 @@ const ConverterWrapper = styled.main`
   .c-converter__northinginput,
   .c-converter__eastinginput {
     padding: 1.25vh;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-family: "Syne";
     font-weight: 400;
     opacity: 0.8;

@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import image from "../assets/img/epoch028_fake_A 1.png";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Home";
+  });
   return (
     <HomeWrapper>
       <main className="l-homepage">
         <img src={image} alt="cover image" />
         <p className="c-homepage__imagetitle">live satellite view, 1000</p>
       </main>
+      <section className="l-homepage__event">
+        <i>Upcoming</i>
+        <p>How We Learn(t), Gillman Barracks Blk 9</p>
+      </section>
     </HomeWrapper>
   );
 };
@@ -29,6 +36,11 @@ const HomeWrapper = styled.main`
   }
   img {
     max-width: 250px;
+  }
+
+  .l-homepage__event {
+    margin-top: 10vh;
+    text-align: center;
   }
 `;
 

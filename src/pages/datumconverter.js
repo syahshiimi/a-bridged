@@ -10,6 +10,8 @@ import MarkdownFile from "../pages/markdown/datumconverter.md";
 const DatumConverter = () => {
   const [markdown, setMarkdown] = useState("");
   useEffect(() => {
+    document.title = "Datum Converter";
+
     fetch(MarkdownFile)
       .then((res) => res.text())
       .then((text) => setMarkdown(text));
@@ -21,7 +23,9 @@ const DatumConverter = () => {
         <section className="c-datumconverter">
           <h1>Convert between Datum Types</h1>
           <Converter />
-          <p>Currently the converter only supports WGS84 and SVY21 Datum</p>
+          <p className="c-datumconverter__subtext">
+            Currently the converter only supports WGS84 and SVY21 Datum
+          </p>
         </section>
         <section className="c-aboutconverter">
           <h1 className="c-aboutconverter__title">About the converter</h1>
@@ -39,8 +43,12 @@ const DatumWrapper = styled.main`
   text-align: center;
   padding: 5vh 0vw;
 
+  .c-datumconverter__subtext {
+    padding: 2vh 15vw;
+  }
+
   .c-aboutconverter {
-    margin: 5vh 15vw 0vh 15vw;
+    margin: 5vh 12vw 0vh 12vw;
   }
   p {
     margin: 1vh 0vw;

@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Landing() {
-  //  const axios = require("axios");
   const [title, setTitle] = useState("A-bridged");
   const [subtext, setSubtext] = useState(
     "A-bridged is a research foundation founded in 1995 dedicated to land surveying and mapping."
   );
 
+  useEffect(() => {
+    document.title = "A-bridged";
+  });
   return (
     <LandingWrapper>
       <div className="l-landing">
@@ -22,14 +25,17 @@ export default function Landing() {
   );
 }
 const LandingWrapper = styled.div`
-  background: #e5e5e5;
+  background-color: #e5e5e5;
 
   .l-landing {
+    transition: all 3.5s ease-in-out;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 0vh 6vw;
+    padding: 0vh 7vw;
+
+    transition: all 0.5s ease-in-out;
     background: radial-gradient(
       67.18% 67.18% at 50% 50%,
       rgba(247, 33, 14, 0.97) 0%,

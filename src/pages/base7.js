@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Navbar from "../components/navbar";
 
 const BaseSeven = () => {
+  useEffect(() => {
+    document.title = "Pillar 7/Base 7";
+  });
   return (
     <BaseSevenWrapper>
       <main className="l-homepage">

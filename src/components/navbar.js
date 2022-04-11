@@ -59,4 +59,8 @@ const NavWrapper = styled.div`
     border: none;
     background-color: var(--primary-clr-50);
   }
+
+  .c-navbar__text {
+    font-size: 0.9rem;
+  }
 `;

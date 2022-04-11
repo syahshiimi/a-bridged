@@ -3,10 +3,16 @@ import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import Header from "./components/header";
 import { Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function App() {
   return (
     <AppWrapper>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>My Title</title>
+        <link rel="canonical" href="http://a-bridged.xyz" />
+      </Helmet>
       <HeaderWrapper>
         <Header />
       </HeaderWrapper>
@@ -29,6 +35,7 @@ const AppWrapper = styled.main`
   align-items: stretch;
   justify-items: center;
   flex-direction: column;
+  transition: all 0.5s ease-in-out;
 `;
 
 const HeaderWrapper = styled.header`
@@ -41,6 +48,7 @@ const BodyWrapper = styled.article`
   flex: 1 1 100%;
   padding: 0vh 5vw;
   justify-content: center;
+  /* yellow gradient */
   background: radial-gradient(
     41.63% 41.63% at 50% 50%,
     #eed202 0%,

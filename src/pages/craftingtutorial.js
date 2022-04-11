@@ -7,6 +7,8 @@ export default function CraftingTutorial() {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
+    document.title =
+      "The Digital Compendium to Land Surveying: For Amateurs by Aamateurs Tutorial";
     fetch(MarkdownFile)
       .then((res) => res.text())
       .then((text) => setMarkdown(text));
