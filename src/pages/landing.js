@@ -16,7 +16,7 @@ export default function Landing() {
     <LandingWrapper>
       <div className="l-landing">
         <h1 className="c-landing__title">{title}</h1>
-        <p className="c-landing__subtext">{subtext}</p>
+        <h5 className="c-landing__subtext">{subtext}</h5>
         <Link to="/home" className="c-landing__enter">
           Enter
         </Link>
@@ -29,8 +29,8 @@ const LandingWrapper = styled.div`
 
   .l-landing {
     transition: all 3.5s ease-in-out;
-    min-height: 100vh;
     display: flex;
+    height: 100vh;
     justify-content: center;
     flex-direction: column;
     padding: 0vh 7vw;
@@ -57,5 +57,26 @@ const LandingWrapper = styled.div`
 
   .c-landing__enter {
     text-align: center;
+  }
+
+  /* Tablet */
+
+  @media (min-width: 992px) {
+    .c-landing__title {
+      font-size: 5rem;
+      margin: 0;
+    }
+    .c-landing__subtext {
+      margin: 2vh 15vw;
+    }
+    .c-landing__enter {
+      font-size: 1.25rem;
+    }
+    /*
+    :hover {
+        text-decoration: underline;
+        color: var(--primary-clr-50);
+    }
+*/
   }
 `;

@@ -44,7 +44,7 @@ const DatumWrapper = styled.main`
   padding: 5vh 0vw;
 
   .c-datumconverter__subtext {
-    padding: 2vh 15vw;
+    padding: 0vh 15vw;
   }
 
   .c-aboutconverter {

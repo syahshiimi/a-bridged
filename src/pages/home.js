@@ -14,7 +14,11 @@ const Home = () => {
       </main>
       <section className="l-homepage__event">
         <i>Upcoming</i>
-        <p>How We Learn(t), Gillman Barracks Blk 9</p>
+        <p>
+          <i>substance of a minute, recorded by a machine and a few others</i>,
+          now showing for <strong>'How We Learn(t)'</strong> at Gillman Barracks
+          Block 9
+        </p>
       </section>
     </HomeWrapper>
   );
@@ -41,6 +45,16 @@ const HomeWrapper = styled.main`
   .l-homepage__event {
     margin-top: 10vh;
     text-align: center;
+  }
+
+  /* tablet */
+  @media (min-width: 992px) {
+    .l-homepage__event {
+      margin: 10vh 25vw 0vh;
+    }
+    img {
+      max-width: 300px;
+    }
   }
 `;
 

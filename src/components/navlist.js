@@ -9,6 +9,7 @@ export default function Navlist({ list, isOpen }) {
           <ul className="c-navbar__ul" key={pageID}>
             <li className="c-navbar__links">
               <NavLink
+                onClick={isOpen}
                 style={({ isActive }) => {
                   return {
                     color: isActive ? "#F62210" : "",

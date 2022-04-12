@@ -169,6 +169,7 @@ a {
   font-weight: 600;
 }
 
+
 li {
   font-size: 1rem;
   font-family: "Syne";
@@ -204,6 +205,25 @@ blockquote > p {
   color: var(--primary-clr-100);
 }
 
+/* Tablet Media Queries */
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.35rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+}
 
 
 .c-navbar__modal {
@@ -246,6 +266,17 @@ blockquote > p {
 
 .ReactModal__Overlay--before-close{
     opacity: 0;
+    transition: opacity 500ms ease-in-out;
 }
 
+@media (min-width: 992px) {
+  .c-navbar__modal {
+    left: 25%;
+    top: 25%;
+    width: 50%;
+  }
+  .c-navbar__ul {
+    text-align: center;
+  }
+}
 

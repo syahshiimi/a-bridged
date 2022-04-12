@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Modal from "react-modal";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { pageLinks } from "../assets/data";
@@ -18,10 +17,7 @@ export default function Navbar() {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    console.log("is open");
-  }
+  function afterOpenModal() {}
 
   function closeModal() {
     setIsOpen(false);
@@ -39,10 +35,7 @@ export default function Navbar() {
         contentLabel="Example Modal"
         className={"c-navbar__modal"}
       >
-        <Navlist list={pageLinks} />
-        <button className="c-navbar__modalbutton" onClick={closeModal}>
-          Close
-        </button>
+        <Navlist list={pageLinks} isOpen={closeModal} />
       </Modal>
     </NavWrapper>
   );
@@ -62,5 +55,8 @@ const NavWrapper = styled.div`
 
   .c-navbar__text {
     font-size: 0.9rem;
+  }
+
+  @media (min-width: 992px) {
   }
 `;
