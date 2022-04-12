@@ -45,7 +45,7 @@ const HeaderWrapper = styled.header`
 const BodyWrapper = styled.article`
   display: flex;
   flex-direction: column;
-  flex: 1 1 100%;
+  flex: 1 1 auto;
   padding: 0vh 5vw;
   justify-content: center;
   /* yellow gradient */
@@ -54,6 +54,17 @@ const BodyWrapper = styled.article`
     #eed202 0%,
     #e5e5e5 100%
   );
+
+  @media (min-width: 992px) {
+    padding: 0vh 10vw 0vh;
+    justify-content: stretch;
+    /* yellow gradient */
+    background: radial-gradient(
+      41.63% 51.63% at 50% 50%,
+      #eed202 0%,
+      #e5e5e5 100%
+    );
+  }
 `;
 
 const FooterWrapper = styled.footer``;

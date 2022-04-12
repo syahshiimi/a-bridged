@@ -53,4 +53,7 @@ const CraftingWrapper = styled.main`
       font-size: 0.75rem;
     }
   }
+
+  @media (min-width: 992px) {
+  }
 `;

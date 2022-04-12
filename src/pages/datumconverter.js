@@ -53,6 +53,10 @@ const DatumWrapper = styled.main`
   p {
     margin: 1vh 0vw;
   }
+
+  @media (min-width: 992px) {
+    padding: 2vh 0vw 0vh 0vw;
+  }
 `;
 
 export default DatumConverter;

@@ -22,4 +22,10 @@ const HeaderWrapper = styled.div`
     font-weight: 800;
     color: var(--primary-clr-0);
   }
+
+  @media (min-width: 992px) {
+    .c-header__title {
+      font-size: 3.5rem;
+    }
+  }
 `;

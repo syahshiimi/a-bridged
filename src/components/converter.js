@@ -14,6 +14,7 @@ export default function Converter() {
     // Set default form to WGS84 (lat/lon) and second form to SVY21
     setFirstDatum("WGS84");
     setSecondDatum("SVY21");
+    console.log("there was a re-render");
   }, []);
 
   const WGSForm = () => {
@@ -264,7 +265,7 @@ const ConverterWrapper = styled.main`
   justify-content: flex-start;
   background-color: var(--primary-clr-0);
   margin: 2vh;
-  padding: 3vh;
+  padding: 2.5vh;
   border-radius: 15px;
   opacity: 0.8;
   z-index: -1;
@@ -291,7 +292,7 @@ const ConverterWrapper = styled.main`
     font-size: 1rem;
     text-decoration: underline;
     text-align: left;
-    margin-bottom: 1vh;
+    margin-bottom: 0.5vh;
   }
 
   /* Top Section */
@@ -316,6 +317,7 @@ const ConverterWrapper = styled.main`
   .c-converter__firstdropdown {
     margin: 0vh 2vw;
     font-size: 0.8rem;
+    padding: 0.5vh;
   }
 
   .c-converter__inputcontainer {
@@ -345,6 +347,11 @@ const ConverterWrapper = styled.main`
     display: flex;
     flex-direction: column;
     padding: 0vh 0vw;
+
+    /* we remove the top margin in the second form section */
+    .c-converter__dropdowncontainer {
+      margin-top: 0;
+    }
   }
   .c-converter__secondselection {
     font-weight: 700;
@@ -354,5 +361,15 @@ const ConverterWrapper = styled.main`
   .c-converter__seconddropdown {
     margin: 0vh 2vw;
     font-size: 0.8rem;
+    padding: 0.5vh;
+  }
+
+  @media (min-width: 992px) {
+    margin: 2vh 15vw;
+    padding: 2vh;
+
+    .c-converter__title {
+      font-size: 1.125rem;
+    }
   }
 `;
