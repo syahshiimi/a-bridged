@@ -1,16 +1,25 @@
-export default function SVYForm() {
+export default function SVYForm({
+  northValue,
+  handleNorthInput,
+  eastValue,
+  handleEastInput,
+}) {
   return (
-    <div className="c-converter__inputcontainer">
+    <>
       <input
         type="text"
-        className="c-converter__firstinput"
+        className="c-converter__northinginput"
         placeholder="Northing"
+        value={northValue}
+        onInput={handleNorthInput}
       />{" "}
       <input
         type="text"
-        className="c-converter__secondinput"
+        className="c-converter__eastinginput"
         placeholder="Easting"
-      />
-    </div>
+        value={eastValue}
+        onInput={handleEastInput}
+      />{" "}
+    </>
   );
 }

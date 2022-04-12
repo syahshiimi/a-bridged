@@ -4,9 +4,11 @@ import { BsArrowDownCircleFill, BsReception0 } from "react-icons/bs";
 import styled from "styled-components";
 
 import SVY21 from "../components/svy21";
+//import WGSForm from "../components/wgsform";
+//import SVYForm from "../components/svyform";
 
 export default function Converter() {
-  // Set WGS84 as the default
+  // Defaults
   useEffect(() => {
     setFirstDatum("WGS84");
     setSecondDatum("SVY21");
@@ -66,13 +68,21 @@ export default function Converter() {
 
   const firstHandleChange = (e) => {
     setFirstDatum(e.target.value);
+
     // Reset display values
     setlonValue("");
     setlatValue("");
     setnorthValue("");
     seteastValue("");
 
+    // Reset state variables for calculation
+    setLatNum(0);
+    setLonNum(0);
+    setNorthNum(0);
+    setEastNum(0);
+
     // Change Other Form (Second Form)
+    // If first form is WGS84, seoncd form should not be WGS84, vice versa.
     if (e.target.value == "WGS84") {
       setSecondDatum("SVY21");
     } else {
@@ -82,12 +92,21 @@ export default function Converter() {
 
   const secondHandleChange = (e) => {
     setSecondDatum(e.target.value);
+
     // Reset display values
     setlonValue("");
     setlatValue("");
     setnorthValue("");
     seteastValue("");
+
+    // Reset state variables for calculation
+    setLatNum(0);
+    setLonNum(0);
+    setNorthNum(0);
+    setEastNum(0);
+
     // Change Other Form (First Form)
+    // If second form is WGS84, first form should not be WGS84, vice versa.
     if (e.target.value == "WGS84") {
       setFirstDatum("SVY21");
     } else {
@@ -95,6 +114,7 @@ export default function Converter() {
     }
   };
 
+  // Set component render state
   const FirstForm = () => {
     if (firstDatum == "WGS84") {
       return <>{WGSForm()}</>;
@@ -113,19 +133,31 @@ export default function Converter() {
 
   // Calculate Input
 
+  // DISPLAY ON FORM
   // useState hooks to determine form value that will be displayed.
   const [latValue, setlatValue] = useState("");
   const [lonValue, setlonValue] = useState("");
   const [northValue, setnorthValue] = useState("");
   const [eastValue, seteastValue] = useState("");
 
+  // Hooks for CALCULATION
   // useState hooks to store actual num values for conversion
   const [latNum, setLatNum] = useState(0);
   const [lonNum, setLonNum] = useState(0);
+  const [northNum, setNorthNum] = useState(0);
+  const [eastNum, setEastNum] = useState(0);
 
   const handleConvert = (e) => {
     e.preventDefault();
-    convertToSVY(latNum, lonNum);
+    if (latNum != 0 || latNum != 0) {
+      console.log("converting from WGS84 to SVY21...");
+      convertToSVY(latNum, lonNum);
+    } else if (northNum != 0 || eastNum != 0) {
+      console.log("converting from SVY21 to WGS84...");
+      convertToLatLon(northNum, eastNum);
+    } else if (latNum == 0 || latNum == 0) {
+      console.log("empty inputs");
+    }
   };
 
   const handleLatInput = (e) => {
@@ -148,12 +180,20 @@ export default function Converter() {
 
   const handleNorthInput = (e) => {
     setnorthValue(e.target.value);
-    convertToLatLon(northValue, eastValue);
+    // Set display to show input value
+    setnorthValue(e.target.value);
+
+    // Set value for calculation
+    setNorthNum(parseFloat(e.target.value));
   };
 
   const handleEastInput = (e) => {
     seteastValue(e.target.value);
-    convertToLatLon(northValue, eastValue);
+    // Set display to show input value
+    seteastValue(e.target.value);
+
+    // Set value for calculation
+    setEastNum(parseFloat(e.target.value));
   };
 
   const convertToSVY = (lat, lon) => {
@@ -166,8 +206,8 @@ export default function Converter() {
   const convertToLatLon = (northValue, eastValue) => {
     const resultsLatLon = cv.computeLatLon(northValue, eastValue);
     const { lat, lon } = resultsLatLon;
-    setlatValue(Number(lat));
-    setlonValue(Number(lon));
+    setlatValue(lat);
+    setlonValue(lon);
   };
 
   return (

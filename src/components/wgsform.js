@@ -1,17 +1,25 @@
-export default function WGSForm({ value }) {
+export default function WGSForm({
+  latValue,
+  handleLatInput,
+  lonValue,
+  handleLonInput,
+}) {
   return (
-    <div className="c-converter__inputcontainer">
+    <>
       <input
         type="text"
-        className="c-converter__firstinput"
-        value={value}
+        className="c-converter__latitudeinput"
         placeholder="Latitude"
+        value={latValue}
+        onInput={handleLatInput}
       />{" "}
       <input
         type="text"
-        className="c-converter__secondinput"
+        className="c-converter__longitudeinput"
         placeholder="Longitude"
+        value={lonValue}
+        onInput={handleLonInput}
       />{" "}
-    </div>
+    </>
   );
 }
