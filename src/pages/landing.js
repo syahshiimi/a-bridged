@@ -88,6 +88,7 @@ const LandingWrapper = styled.div`
     }
     .c-landing__enter {
       font-size: 1.25rem;
+      transition: all, .3s ease-in-out;
 
       :hover {
       transition: all, .2s ease-in-out;

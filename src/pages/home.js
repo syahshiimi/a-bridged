@@ -13,7 +13,7 @@ const Home = () => {
         <p className="c-homepage__imagetitle">live satellite view, 1000</p>
       </main>
       <section className="l-homepage__event">
-        <i>Upcoming</i>
+        <h5>Upcoming</h5>
         <p>
           <i>substance of a minute, recorded by a machine and a few others</i>,
           now showing for <strong>'How We Learn(t)'</strong> at Gillman Barracks
