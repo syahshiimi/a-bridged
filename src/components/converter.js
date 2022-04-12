@@ -9,7 +9,9 @@ import SVY21 from "../components/svy21";
 
 export default function Converter() {
   // Defaults
+  const cv = new SVY21();
   useEffect(() => {
+    // Set default form to WGS84 (lat/lon) and second form to SVY21
     setFirstDatum("WGS84");
     setSecondDatum("SVY21");
   }, []);
@@ -56,11 +58,7 @@ export default function Converter() {
     );
   };
 
-  // Initialization
-  const cv = new SVY21();
-
   // Form components
-  // Set default form to WGS84 (lat/lon)
   const [firstDatum, setFirstDatum] = useState("");
   const [secondDatum, setSecondDatum] = useState("");
 
@@ -147,6 +145,7 @@ export default function Converter() {
   const [northNum, setNorthNum] = useState(0);
   const [eastNum, setEastNum] = useState(0);
 
+  // Button Handler
   const handleConvert = (e) => {
     e.preventDefault();
     if (latNum != 0 || latNum != 0) {
@@ -160,6 +159,7 @@ export default function Converter() {
     }
   };
 
+  // Latitude Handler
   const handleLatInput = (e) => {
     e.preventDefault();
     // Set form display
@@ -169,6 +169,7 @@ export default function Converter() {
     setLatNum(parseFloat(e.target.value));
   };
 
+  // Longitude Handler
   const handleLonInput = (e) => {
     e.preventDefault();
     // Set form display
@@ -178,6 +179,7 @@ export default function Converter() {
     setLonNum(parseFloat(e.target.value));
   };
 
+  // Northing Handler
   const handleNorthInput = (e) => {
     setnorthValue(e.target.value);
     // Set display to show input value
@@ -187,6 +189,7 @@ export default function Converter() {
     setNorthNum(parseFloat(e.target.value));
   };
 
+  // Easting Handler
   const handleEastInput = (e) => {
     seteastValue(e.target.value);
     // Set display to show input value
@@ -196,6 +199,7 @@ export default function Converter() {
     setEastNum(parseFloat(e.target.value));
   };
 
+  // Function to Convert to SVY21 Datum
   const convertToSVY = (lat, lon) => {
     const newResults = cv.computeSVY21(lat, lon);
     const { N, E } = newResults;
@@ -203,6 +207,7 @@ export default function Converter() {
     seteastValue(E);
   };
 
+  // Function to convert to WGS84 Datum
   const convertToLatLon = (northValue, eastValue) => {
     const resultsLatLon = cv.computeLatLon(northValue, eastValue);
     const { lat, lon } = resultsLatLon;
@@ -210,6 +215,7 @@ export default function Converter() {
     setlonValue(lon);
   };
 
+  // Component Render
   return (
     <ConverterWrapper>
       <div className="l-converter">

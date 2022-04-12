@@ -4,14 +4,14 @@ import styled from "styled-components";
 
 // Import Components
 import Converter from "../components/converter";
-import SVY21 from "../components/svy21";
+
+// Import Files
 import MarkdownFile from "../pages/markdown/datumconverter.md";
 
 const DatumConverter = () => {
   const [markdown, setMarkdown] = useState("");
   useEffect(() => {
     document.title = "Datum Converter";
-
     fetch(MarkdownFile)
       .then((res) => res.text())
       .then((text) => setMarkdown(text));
