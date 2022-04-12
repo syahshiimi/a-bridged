@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Landing() {
@@ -8,13 +8,21 @@ export default function Landing() {
   const [subtext, setSubtext] = useState(
     "A-bridged is a research foundation founded in 1995 dedicated to land surveying and mapping."
   );
+  const [onLoad, setLoad] = useState("");
 
   useEffect(() => {
-    document.title = "A-bridged";
+    // We set the document page title
+    document.title = title;
+
+    // On page render, where the render is mounted we set a timer of .5
+    // milliseconds before applying the loaded class
+    setTimeout(() => {
+      setLoad("loaded");
+    }, 50);
   });
   return (
     <LandingWrapper>
-      <div className="l-landing">
+      <div className={`l-landing ${onLoad ? "loaded" : ""}`}>
         <h1 className="c-landing__title">{title}</h1>
         <h5 className="c-landing__subtext">{subtext}</h5>
         <Link to="/home" className="c-landing__enter">
@@ -28,19 +36,28 @@ const LandingWrapper = styled.div`
   background-color: #e5e5e5;
 
   .l-landing {
-    transition: all 3.5s ease-in-out;
+    opacity: 0;
     display: flex;
     height: 100vh;
     justify-content: center;
     flex-direction: column;
     padding: 0vh 7vw;
 
-    transition: all 0.5s ease-in-out;
     background: radial-gradient(
+      7.18% 7.18% at 50% 50%,
+      rgba(247, 33, 14, 0.27) 0%,
+      rgba(247, 33, 14, 0) 100%
+    );
+  }
+  .loaded {
+    transition: all 1.75s ease-in-out;
+    opacity: 1;
+ background: radial-gradient(
       67.18% 67.18% at 50% 50%,
       rgba(247, 33, 14, 0.97) 0%,
       rgba(247, 33, 14, 0) 100%
     );
+
   }
   .c-landing__title {
     font-family: "Libre Barcode 128 Text";
@@ -67,16 +84,15 @@ const LandingWrapper = styled.div`
       margin: 0;
     }
     .c-landing__subtext {
-      margin: 2vh 15vw;
+      margin: 2vh 20vw;
     }
     .c-landing__enter {
       font-size: 1.25rem;
+
+      :hover {
+      transition: all, .2s ease-in-out;
+      text-decoration: underline;
+      color: var(--primary-clr-50);
     }
-    /*
-    :hover {
-        text-decoration: underline;
-        color: var(--primary-clr-50);
-    }
-*/
   }
 `;
